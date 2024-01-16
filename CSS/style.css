@@ -1,0 +1,474 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+/* Variables */
+
+:root [theme="dark"]{
+ --background--color: white;
+ --text--color: black;
+ --nav--background--color:black;
+ --nav--text--color:white;
+ --container--color:antiquewhite;
+ --logo--color:rgb(255, 255, 255);
+}
+:root [theme="light"] {
+    --background--color:black;
+    --text--color:white;
+    --nav--background--color:rgb(186, 180, 180);
+    --nav--text--color:black;
+    --container--color:rgb(87, 27, 27);
+    --logo--color:rgb(47, 5, 5);
+}
+/* End Variables */
+
+
+/* Start Loader */
+/* 
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after,
+  .loader::before {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #FF3D00;
+    width: 6px;
+    height: 6px;
+    transform: translate(150%, 150%);
+    border-radius: 50%;
+  }
+  .loader::before {
+    left: auto;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    transform: translate(-150%, -150%);
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+
+  .loading {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(71, 70, 70);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    
+
+  } */
+
+/* End Loader */
+
+
+body{
+    background-color: var(--background--color);
+    /* overflow: hidden; */
+    /* position: absolute; */
+    transition: 1s;
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: var(--nav--background--color);
+    color: var(--nav--text--color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 60;
+}
+ul {
+    display: flex;
+    gap: 20px;
+    margin-left: 10px;
+
+}
+ul li {
+    list-style: none;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+}
+ul li:hover {
+    color: brown;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 20px;
+    font-family: monospace;
+    font-weight: bold;
+    color: var(--logo--color);
+    margin-right: 20px;
+    border: 1px solid var(--logo--color);
+    padding: 5px;
+}
+
+.scrolled {
+    background-color: brown;
+    opacity: 0.5;
+}
+
+/* End Navigation Bar */
+
+/* Start profile popup */
+.profile {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 70;
+
+}
+.profilePopup {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: darkcyan;
+    border-radius: 20px;
+    font-family: monospace;
+    text-align: center;
+    font-size: 20px;
+}
+
+#closeProfile {
+    width: 100px;
+    height: 50px;
+    background-color: red;
+    color: black;
+    z-index: 100;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-top: 50px;
+    box-shadow: 1px 1px 5px;
+    transition-duration: 0.5s;
+}
+#closeProfile:hover {
+    background-color: navy;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.5s;
+
+}
+
+/* End Profile popup */
+
+
+/* Start Gallery */
+.center3 {
+    display: flex;
+    width: 100%;
+    height: 800px;
+    margin-top: 80px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    /* margin-top: 10px; */
+    grid-gap: 30px;
+    margin-left: 50px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.gallery img {
+    margin-top: 20px;
+    transition: 1s;
+    border-radius: 20px;
+}
+
+.gallery img:hover {
+    width: 350px;
+    height: 350px;
+    transition-duration: 1s;
+    cursor: pointer;
+}
+
+#chessWallpaper {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    background-image: url(../photos/chessWallpapers.jpg); /* Replace with the path to your image */
+    background-size: contain;
+}
+
+/* You can adjust the opacity based on your preference */
+.chessWallpaper img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    transition-duration: 1s;
+}
+
+
+/* End Gallery */
+
+
+
+
+
+
+
+/* Start CenterBlock1 */
+
+
+img {
+    width: 300px;
+    height: 300px;
+    box-shadow: 1px 5px 10px;
+    /* margin-top: 250px; */
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: var(--background--color);
+    padding: 30px;
+    /* margin-top: 50px; */
+    margin-left: 100px;
+}
+.left
+{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+.left p {
+    width: 300px;
+    margin-top: 20px;
+    text-align: center;
+    color: var(--text--color);
+    font-size: 18px;
+}
+.right {
+    width: 500px;
+    display: flex;
+    /* margin-left: 30px; */
+    flex-direction: column;
+
+
+}
+.right p {
+    width: 300px;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text--color);
+    font-size: 18px;
+
+
+}
+.centerDiv
+{
+    width: 500px;
+}
+.centerDiv p {
+    margin-top: 20px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: var(--text--color);
+    font-size: 18px;
+
+
+}
+/* End CenterBlock1 */
+
+
+/* Start About */
+.About {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    border: 1px solid ;
+    border-radius: 20px;
+    background-color: rgb(185, 182, 182);
+    box-shadow: 1px 1px 10px;
+    margin: 20px;
+}
+
+.aboutLeft,
+.aboutRight {
+    flex: 1 1 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text--color);
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 12px;
+    background-color: #3498db;
+    color: var(--text--color);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+h2 {
+    font-size: 24px;
+    color: var(--text--color);
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+    display: block;
+    margin-bottom: 5px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+mark {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 2px;
+    display: inline-block;
+}
+
+
+/* End About */
+
+.popup {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: 1.5s;
+    z-index: 55;
+}
+
+.popup .popupWindow {
+    width: 500px;
+    height: 500px;
+    background-color: wheat;
+    border-radius: 20px;
+    transition: 1.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+.popup .popupWindow input {
+    display: block;
+    width: 250px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.popup .popupWindow button {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.popup .popupWindow button:hover {
+    background-color: rgb(58, 54, 54);
+    color: white;
+    cursor: pointer;
+}
+.popup .popupWindow .close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 130px;
+    right: 495px;
+    transition: 1s;
+    background-image: url(../photos/chesswallpapers4.jpg);
+
+}
+.popup .popupWindow .close:hover {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    transition: 1s;
+}
+
+/* Start Up button */
+
+.upButton {
+    display: none;
+    position: fixed;
+    top: 650px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 50;
+    background-color: none;
+}
+.upButton:hover {
+    cursor: pointer;
+}
+
+/* End Up button */
+

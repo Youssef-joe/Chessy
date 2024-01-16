@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>Mikhail Tal Biography</title>
+</head>
+<body>
+
+    <style>
+        *{
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+/* Start with boxes */
+.boxes {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+}
+.box {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    transform: translate(400%);
+    transition: transform 0.4s ease;
+    transition:1s; ;
+    background-color: gray;
+    box-shadow: 2px 4px 10px black;
+    text-shadow: 1px 1px 1px;
+    line-height: 50px;
+    padding: 10px;
+    
+}
+/* .box:nth-of-type(even) {
+    transform: translate(-400%);
+} */
+.show {
+    transform: translate(0);
+}
+
+
+/* End Boxes */
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.biography {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 0;
+}
+
+.biography img {
+    max-width: 200px;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+.details {
+    text-align: left;
+}
+
+.achievements {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 0.5em;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+    </style>
+
+
+    <header>
+        <h1>Mikhail Tal Biography</h1>
+    </header>
+
+    <section class="biography">
+        <img src="../../photos/TalBio.jpg" alt="Mikhail Tal">
+        <div class="details">
+            <h2>Mikhail Tal</h2>
+            <p>Date of Birth: November 9, 1936</p>
+            <p>Nationality: Latvian</p>
+        </div>
+    </section>
+
+    <section class="achievements">
+        <h2>Notable Achievements</h2>
+        <ul>
+            <li>1960 - Became the youngest World Chess Champion at the age of 23</li>
+            <li>1961 - Awarded the first-ever Chess Oscar</li>
+            <!-- Add more achievements as needed -->
+        </ul>
+    </section>
+
+    <div class="boxes">
+        <h1></h1>
+        <div class="box blue">Tal has defeated nearly every Grandmaster you could name during his era. Some of which were witnessed in 1959 when Tal played in a tournament in 1959 called the XYZ where he was 20 out of 28  points. These names include Paul Benko, the legendary Bobby Fischer who was 16 at the time,</div>
+        <div class="box red">Tal frequently astonished the spectators as well as his opponents with seemingly impossible attacking combinations and tactics leading him to become the 8th World Chess Champion.</div>
+        <div class="box yellow">Mikhail Tal has one of the highest IQ scores ever recorded at a jaw dropping 174 IQ. One of the most commonly believed myths about Chess is that all Chess Grandmasters have a high IQ, which isn’t the case. Although you don’t need a high IQ to be good at chess, it must have contributed to the attacking strategies Tal was able to pull off.</div>
+        <div class="box green">Being known as the great attacking player of all time, do you think you’ll see some interesting tactics regularly in his games? You bet your last pawn you can. Tal has won countless matches from implementing jaw-dropping Queen sacrifices that would lead to an advantage over the board.</div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Mikhail Tal Biography</p>
+    </footer>
+
+    <script>
+        const boxes = document.querySelectorAll(`.box`)
+
+window.addEventListener(`scroll`, checkBoxes)
+
+function checkBoxes() {
+   const triggerBottom = (window.innerHeight / 5 * 4 )
+
+   boxes.forEach(box => {
+    const boxTop = box.getBoundingClientRect().top;
+
+    if(boxTop < triggerBottom) {
+        box.classList.add(`show`)
+    } else {
+        box.classList.remove(`show`)
+    }
+   })
+}
+    </script>
+</body>
+</html>

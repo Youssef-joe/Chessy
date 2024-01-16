@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+            margin: auto;
+            width: 90%;
+            height: 100vh;
+            align-items: center;
+            flex-wrap: wrap;
+
+       }
+        .products {
+            background-color: gray;
+            box-shadow: 1px 1px 10px;
+            width: 400px;
+            height: 400px;
+
+        }
+    </style>
+    <div class="container">
+    </div>
+
+    <script>
+        let products = new XMLHttpRequest()
+        products.open(`GET`, `https://dummyjson.com/products`)
+        products.send()
+
+        let allProducts = []
+
+        products.addEventListener(`readystatechange`, function() {
+            if (products.readyState === 4) {
+                allProducts = JSON.parse(products.response).products
+                loopData()
+            }
+
+           
+        })
+
+
+        function loopData() {
+            let loop = ``
+
+            for(let i = 0; i <= allProducts.length; i++) {
+                loop += `
+                <div class="products">
+
+                    <h3>${allProducts[i].title}</h3>
+                    <img src="${allProducts[i].thumbnail}" >
+
+            </div>
+                `
+            }
+
+            document.getElementsByClassName(`container`).innerHTML = x 
+        }
+    </script>
+</body>
+</html>
